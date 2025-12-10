@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 1</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    document.write("<h2>Робота з масивами</h2>");
+
+    let Treag = [];
+    for (let n = 1; n <= 10; n++) {
+        Treag.push(n * (n + 1) / 2);
+    }
+    document.write("<p><b>Масив трикутних чисел Treag:</b><br>");
+    document.write(Treag.join("  ") + "</p>");
+
+    let kvd = [];
+    for (let n = 1; n <= 10; n++) {
+        kvd.push(n * n);
+    }
+    document.write("<p><b>Масив квадратів kvd:</b><br>");
+    document.write(kvd.join("  ") + "</p>");
+
+    let rez = Treag.concat(kvd);
+    document.write("<p><b>Об'єднаний масив rez:</b><br>");
+    document.write(rez.join("  ") + "</p>");
+
+    rez.sort(function(a, b) { return b - a; });
+    document.write("<p><b>Відсортований масив rez у зворотному порядку:</b><br>");
+    document.write(rez.join("  ") + "</p>");
+</script>
+</body>
+</html>

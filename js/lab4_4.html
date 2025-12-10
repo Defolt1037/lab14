@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    document.write("<h2>Операції з масивами фруктів</h2>");
+
+    let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+    let citrus = ['orange', 'lemon', 'lime'];
+
+    document.write("<p><b>1. Масив fruits:</b><br>");
+    document.write(fruits.join(", ") + "</p>");
+
+    document.write("<p><b>2. Масив citrus:</b><br>");
+    document.write(citrus.join(", ") + "</p>");
+
+    fruits = fruits.concat(citrus);
+    document.write("<p><b>3. Об'єднаний масив fruits:</b><br>");
+    document.write(fruits.join(", ") + "</p>");
+
+    let mangoIndex = fruits.indexOf('mango');
+    fruits.splice(mangoIndex + 1, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+    document.write("<p><b>4. Масив після вставки після mango:</b><br>");
+    document.write(fruits.join(", ") + "</p>");
+
+    fruits.splice(-3, 3);
+    document.write("<p><b>5. Масив після видалення останніх 3 елементів:</b><br>");
+    document.write(fruits.join(", ") + "</p>");
+
+    let sortedFruits = fruits.slice().sort();
+    document.write("<p><b>6. Відсортований масив в алфавітному порядку:</b><br>");
+    document.write(sortedFruits.join(", ") + "</p>");
+
+    let reverseSorted = fruits.slice().sort().reverse();
+    document.write("<p><b>7. Масив у зворотному алфавітному порядку:</b><br>");
+    document.write(reverseSorted.join(", ") + "</p>");
+
+    let sortedByLength = fruits.slice().sort(function(a, b) {
+        return a.length - b.length;
+    });
+    document.write("<p><b>8. Масив відсортований за довжиною слів:</b><br>");
+    document.write(sortedByLength.join(", ") + "</p>");
+</script>
+</body>
+</html>

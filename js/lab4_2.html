@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    document.write("<h2>Пошук мінімального елемента</h2>");
+
+    let arr = [];
+    for (let i = 0; i < 15; i++) {
+        arr.push(Math.floor(Math.random() * 100));
+    }
+
+    document.write("<p><b>Вихідний масив:</b><br>");
+    document.write(arr.join("  ") + "</p>");
+
+    let minValue = arr[0];
+    let minIndex = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < minValue) {
+            minValue = arr[i];
+            minIndex = i;
+        }
+    }
+
+    document.write("<p><b>Мінімальний елемент:</b> " + minValue + " (індекс: " + minIndex + ")</p>");
+
+    arr[0] = minValue;
+
+    arr[minIndex] = 9999;
+
+    document.write("<p><b>Масив після змін:</b><br>");
+    document.write(arr.join("  ") + "</p>");
+
+    document.write("<p><i>Перший елемент тепер дорівнює мінімальному значенню: " + arr[0] + "</i></p>");
+    document.write("<p><i>Мінімальний елемент замінено на 9999</i></p>");
+</script>
+</body>
+</html>

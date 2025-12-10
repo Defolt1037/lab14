@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 3</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    document.write("<h2>Аналіз масиву з вбудованими методами</h2>");
+
+    let arr = [];
+    for (let i = 0; i < 15; i++) {
+        arr.push(Math.floor(Math.random() * 200) - 50);
+    }
+
+    document.write("<p><b>Вихідний масив:</b><br>");
+    document.write(arr.join("  ") + "</p>");
+
+    let F = parseInt(prompt("Введіть значення F:", ""));
+    document.write("<p><b>Задане значення F:</b> " + F + "</p>");
+
+    let nonNegativeCount = arr.filter(function(num) {
+        return num >= 0;
+    }).length;
+
+    document.write("<p><b>Кількість невід'ємних чисел:</b> " + nonNegativeCount + "</p>");
+
+    let sum = 0;
+    let positions = [];
+
+    arr.forEach(function(num, index) {
+        if ((index + 1) % 3 === 0 && num !== F) {
+            sum += num;
+            positions.push(index + 1);
+        }
+    });
+
+    document.write("<p><b>Позиції, кратні 3:</b> " + positions.join(", ") + "</p>");
+    document.write("<p><b>Сума чисел на позиціях, кратних 3 (не рівних F):</b> " + sum + "</p>");
+
+    let elements = [];
+    arr.forEach(function(num, index) {
+        if ((index + 1) % 3 === 0) {
+            elements.push(num + (num === F ? " (= F, не враховано)" : ""));
+        }
+    });
+    document.write("<p><b>Елементи на позиціях, кратних 3:</b> " + elements.join(", ") + "</p>");
+</script>
+</body>
+</html>
